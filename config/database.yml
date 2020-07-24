@@ -1,0 +1,40 @@
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   username: postgres
+#   password: postgres
+#   # For details on connection pooling, see Rails configuration guide
+#   # https://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+# development:
+#   <<: *default
+#   database: event_development
+
+# test:
+#   <<: *default
+#   database: event_test
+
+# production:
+#   <<: *default
+#   database: event_production
+#   username: event
+#   password: <%= ENV['EVENT_DATABASE_PASSWORD'] %>
+
+
+default: &default
+  adapter: mysql2
+  encoding: utf8 
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  username: root
+  password: root
+
+development:
+  <<: *default
+  database: event_development
+
+test:
+  <<: *default
+  database: event_test
